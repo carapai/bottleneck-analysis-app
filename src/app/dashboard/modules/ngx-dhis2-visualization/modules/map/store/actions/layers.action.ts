@@ -19,6 +19,7 @@ export const UPDATE_LAYER_STYLE = '[Layer] Update layer Style';
 export const UPDATE_LAYER_STYLE_SUCCESS = '[Layer] Update layer Style Success';
 export const INIT_LAYER_VISIBILITY_SETTINGS = '[Map] Initialize layer visibility';
 export const TOGGLE_LAYER_VISIBILITY_SETTINGS = '[Map] Toggle Layer visibility';
+export const SET_ACTIVE_LAYER_VISIBLE = '[Map] Set CurrentLayer active';
 
 export class LoadLayers implements Action {
   readonly type = LOAD_LAYERS;
@@ -94,6 +95,11 @@ export class InitializeLayerVisibilitySettings implements Action {
   constructor(public payload: { componentId: string; settings: LayerVisibility }) {}
 }
 
+export class SetCurrentLayerActiveVisible implements Action {
+  readonly type = SET_ACTIVE_LAYER_VISIBLE;
+  constructor(public payload: { componentId: string; layer: string }) {}
+}
+
 export class ToggleLayerVisibilitySettings implements Action {
   readonly type = TOGGLE_LAYER_VISIBILITY_SETTINGS;
   constructor(public payload: { componentId: string; layer: string }) {}
@@ -112,5 +118,6 @@ export type LayersAction =
   | RemoveLayersSuccess
   | UpdateLayerStyle
   | UpdateLayerStyleSuccess
+  | SetCurrentLayerActiveVisible
   | InitializeLayerVisibilitySettings
   | ToggleLayerVisibilitySettings;

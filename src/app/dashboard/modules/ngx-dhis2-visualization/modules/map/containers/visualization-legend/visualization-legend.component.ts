@@ -88,6 +88,9 @@ export class VisualizationLegendComponent implements OnInit, OnDestroy {
     e.stopPropagation();
     if (activeLayer === 'baseMap') {
       this.LegendsTileLayer = Object.keys(TILE_LAYERS).map(layerKey => TILE_LAYERS[layerKey]);
+    } else {
+      const { componentId } = this.mapVisualizationObject;
+      this.store.dispatch(new fromStore.SetCurrentLayerActiveVisible({ componentId, layer: activeLayer }));
     }
 
     if (this.showFilterContainer) {

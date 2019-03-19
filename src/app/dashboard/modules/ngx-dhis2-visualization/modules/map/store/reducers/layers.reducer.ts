@@ -37,6 +37,20 @@ export function reducer(state = initialState, action: fromLayers.LayersAction): 
         entities
       };
     }
+    case fromLayers.SET_ACTIVE_LAYER_VISIBLE: {
+      const { componentId, layer } = action.payload;
+      const entity = state.entities[componentId];
+      const updateEntities = Object.assign({}, ...Object.keys(entity).map(key => ({ [key]: false })));
+      const layers = { ...updateEntities, ...{ [layer]: true } };
+      const entities = {
+        ...state.entities,
+        ...{ [componentId]: layers }
+      };
+      return {
+        ...state,
+        entities
+      };
+    }
   }
   return state;
 }
