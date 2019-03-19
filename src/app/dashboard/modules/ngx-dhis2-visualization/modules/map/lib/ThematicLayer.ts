@@ -91,7 +91,7 @@ export const thematic = options => {
   const _legendSet = {
     layer: options.id,
     opacity,
-    hidden: false,
+    hidden: true,
     legend
   };
   const optionsToReturn = {
