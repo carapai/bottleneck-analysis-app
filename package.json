@@ -48,7 +48,7 @@
     "d3-time-format": "^2.1.1",
     "dexie": "^2.0.4",
     "dom-to-image": "https://git@github.com/heshan0131/dom-to-image.git",
-    "file-saver": "^2.0.1",
+    "file-saver": "^2.0.2",
     "font-awesome": "^4.7.0",
     "geojson": "^0.5.0",
     "gis-api": "^25.0.4",
